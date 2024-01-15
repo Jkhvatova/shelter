@@ -1,0 +1,46 @@
+$font_path: '~/src/assets/fonts/';
+
+// Arial
+
+@font-face {
+   font-family: 'Arial';
+   font-style: normal;
+   font-weight: 400;
+   src: local('Arial'),
+        url($font_path + 'arial/arial-regular.ttf') format('truetype');
+}
+
+@font-face {
+   font-family: 'Arial-italic';
+   font-style: italic;
+   font-weight: 400;
+   src: local('Arial'),
+        url($font_path + 'arial/arial-italic.ttf') format('truetype');
+}
+
+// Georgia
+
+@font-face {
+   font-family: 'Georgia';
+   font-style: normal;
+   font-weight: 400;
+   src: local('Georgia'),
+        url($font_path + 'georgia/georgia-regular.ttf') format('truetype');
+}
+
+@font-face {
+   font-family: 'Georgia';
+   font-style: italic;
+   font-weight: 400;
+   src: local('Georgia'),
+        url($font_path + 'georgia/georgia-italic.ttf') format('truetype');
+}
+
+// fonts
+%font-primary {
+   font-family: "Georgia", Times, Times New Roman, serif;
+}
+
+%font-add {
+   font-family: "Arial", Helvetica Neue, Helvetica, sans-serif;
+}

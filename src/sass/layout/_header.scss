@@ -1,0 +1,122 @@
+
+.header {
+  padding-top: 30px;
+  &__container {
+    display: flex;
+    overflow: hidden;
+  }
+  &__nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    @include media-sm-md {
+      padding: 0 10px;
+    }
+    .nav-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      list-style: none;
+      margin-top: 0;
+      transition-duration: 0.5s;
+      transition-delay: 0.2s;
+      @media screen and (max-width: 767.9px) {
+        flex-direction: column;
+        background-color: $color-dark-3xl;
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        padding-top: 249px;
+        padding-right: 40px;
+        justify-content: flex-start;
+        height: 100vh;
+      }
+      &-open {
+        right: 0;
+      }
+    }
+
+  }
+  &__logo {
+    opacity: 1;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &__logo-text {
+    @include font($size: 1.3rem, $height: 1.495rem, $spacing: 0.1em);
+    color: $color-light-xl;
+    margin-top: 10px;
+    padding-left: 4px;
+  }
+}
+
+
+
+.nav-item {
+  padding-left: 36px;
+  @extend %font-add;
+  @include font($size: 1.5rem, $height: 2.4rem);
+  a {
+    @extend %transition;
+    padding-bottom: 3px;
+    color: $color-dark-s;
+    &:hover {
+      color: $color-light-s;
+    }
+    @media screen and (max-width: 767.9px) {
+      padding-bottom: 7px;
+    }
+  }
+  @media screen and (max-width: 767.9px) {
+    @include font($size: 3.2rem, $height: 5.12rem);
+    padding-bottom: 41px;
+    padding-left: 0;
+    text-align: center;
+  }
+  &-active {
+    a {
+      border-bottom: 3px solid $color-primary;
+      color: $color-light-s;
+      pointer-events: none;
+    }
+  }
+}
+
+// Pets page
+
+.pets-page__header {
+  width: 100%;
+  //position: fixed;
+  //z-index: 30;
+  background-color: $color-light-xl;
+  padding-top: 30px;
+  padding-bottom: 17px;
+  transition: .3s all;
+  .header__logo {
+     z-index: 30;
+     &-title {
+        color: $color-dark-l;
+     }
+     &-text {
+        color: $color-dark-3xl;
+     }
+  }
+  .nav-item {
+    a {
+       color: $color-dark-l;
+       &:hover {
+          color: $color-dark-3xl;
+       }
+    }
+    &-active {
+       a {
+          color: $color-dark-l;
+       }
+
+    }
+ }
+}

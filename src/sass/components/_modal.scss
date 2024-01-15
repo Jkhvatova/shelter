@@ -1,0 +1,139 @@
+$icons_path: '~/src/assets/icons/';
+
+.modal {
+   opacity: 0;
+   visibility: hidden;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   width: 952px;
+   height: 552px;
+   background-color: transparent;
+   z-index: 120;
+   transition: .3s all;
+   @include media-md-lg {
+      width: 682px;
+      height: 393px;
+   }
+   @include media-sm-md {
+      width: 270px;
+   }
+   &__button {
+      position: absolute;
+      right: -41px;
+      top: -52px;
+      button {
+         background-image: url($icons_path + "modal-close.svg");
+         background-repeat: no-repeat;
+         background-position: center;
+         width: 52px;
+         height: 52px;
+         padding: 0;
+      }
+   }
+   &__container {
+      width: 900px;
+      height: 500px;
+      background-color: $color-light-s;
+      border-radius: 9px;
+      display: flex;
+      margin-top: 52px;
+      //margin-right: 52px;
+      filter: drop-shadow(0px 2px 35px rgba(13, 13, 13, 0.04));
+      @include media-md-lg {
+         width: 630px;
+         height: 350px;
+      }
+      @include media-sm-md {
+         width: 240px;
+         height: 341px;
+      }
+   }
+   &__image {
+      img {
+         width: 500px;
+         height: 500px;
+         border-top-left-radius: 9px;
+         border-bottom-left-radius: 9px;
+         @include media-md-lg {
+            width: 350px;
+            height: 350px;
+         }
+      }
+
+      @include media-sm-md {
+         display: none;
+      }
+   }
+   &__content {
+      padding-top: 50px;
+      padding-right: 20px;
+      padding-left: 29px;
+      @include media-md-lg {
+         overflow-y: scroll;
+         padding-top: 10px;
+         padding-right: 9px;
+         padding-left: 11px;
+      }
+      @include media-sm-md {
+         overflow-y: scroll;
+      }
+   }
+   &__title {
+      padding-bottom: 10px;
+      @include media-sm-md {
+         text-align: center;
+         @include font($size: 3.5rem, $height: 4.55rem,  $spacing: 0.06em);
+      }
+   }
+   &__subtitle {
+      padding-bottom: 40px;
+      @include media-md-lg {
+         padding-bottom: 20px;
+      }
+      @include media-sm-md {
+         text-align: center;
+         @include font($size: 2rem, $height: 2.3rem, $spacing: 0.06em);
+         padding-bottom: 20px;
+      }
+   }
+   &__desc {
+      padding-bottom: 25px;
+      @include media-md-lg {
+         padding-bottom: 20px;
+      }
+      @include media-sm-md {
+         text-align: justify;
+      }
+   }
+   &__info-list {
+      list-style: none;
+      padding-left: 12px;
+      @include media-sm-md {
+         padding-left: 0;
+      }
+      .info-item {
+         padding-bottom: 11px;
+         &:before {
+            content: "\2022";
+            color: $color-primary;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+          }
+      }
+      .info-name {
+         font-weight: bold;
+      }
+   }
+}
+
+.modal.active {
+   opacity: 1;
+   visibility: visible;
+}

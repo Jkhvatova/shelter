@@ -1,0 +1,129 @@
+$icons_path: '~/src/assets/icons/';
+
+.footer {
+  background: url("/src/assets/images/noise_transparent@2x.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, #5B483A 0%, #262425 100%), #211F20;
+  &__container {
+    padding-top: 40px;
+    justify-content: space-between;
+    @media screen and (max-width: 1000px) {
+      padding-top: 14px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+  &__col-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 280px;
+    padding-top: 16px;
+    padding-bottom: 60px;
+    @media screen and (max-width: 1000px) {
+      height: 234px;
+    }
+    @media screen and (max-width: 500px) {
+      align-items: center;
+      height: 207px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 302px;
+    height: 234px;
+    padding-top: 16px;
+    padding-bottom: 60px;
+    @media screen and (max-width: 500px) {
+      height: 220px;
+      padding-bottom: 25px;
+
+    }
+  }
+  &__title {
+    color: $color-light-xl;
+    @media screen and (max-width: 500px) {
+      text-align: center;
+      padding: 0 10px;
+    }
+  }
+  &__contacts {
+    a {
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       align-self: center;
+       transition: 0.3s;
+       color: $color-primary;
+       @extend %font-primary;
+       @include font($size: 2rem, $height: 2.3rem, $spacing: 0.06em);
+    }
+    &:hover {
+      transition: all 0.3s ease;
+      a {
+        color: $color-light-xl;
+      }
+      .contacts__icon {
+       opacity: 0.5;
+      }
+
+    }
+ }
+}
+
+.contacts__icon {
+  display: flex;
+  padding-right: 20px;
+  opacity: 1;
+  transition: 0.3s;
+  &-map-01 {
+     background-image: url($icons_path + "icon-marker.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+     width: 22px;
+     height: 32px;
+     margin-right: 8px;
+  }
+  &-map-02 {
+     background-image: url($icons_path + "icon-marker.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+     width: 22px;
+     height: 32px;
+  }
+  &-email {
+     background-image: url($icons_path + "icon-email.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+     width: 40px;
+     height: 32px;
+  }
+  &-tel {
+     background-image: url($icons_path + "icon-phone.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+     width: 40px;
+     height: 32px;
+  }
+}
+.footer__image {
+  width: 300px;
+  height: 310px;
+  background-image: url($image_path + "footer-puppy.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  @media screen and (max-width: 1000px) {
+    padding-top: 5px;
+  }
+  @include media-sm-md {
+    width: 260x;
+    height: 269px;
+    margin-top: 17px;
+    padding-top: 0;
+ }
+}

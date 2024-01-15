@@ -1,0 +1,30 @@
+.hamburger {
+  display: none;
+  @media screen and (max-width: 767.9px) {
+    display: inline-block;
+    z-index: 110;
+    width: 30px;
+    transition-duration: 1s;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 13px;
+
+ }
+ .line {
+  width: 30px;
+  height: 2px;
+  background-color: $color-primary;
+  display: block;
+  transition-duration: .25s;
+  transition-delay: .25s;
+  margin: 8px auto;
+  &-pets {
+    background-color: black;
+   }
+ }
+
+}
+
+.open {
+  transform: rotate(270deg);
+}

@@ -1,0 +1,25 @@
+.button {
+  @extend %font-primary;
+  @include font(1.7rem, 2.21rem, 400, normal, 0.1rem);
+  padding: 14px 43px;
+  border: 2px solid $color-primary;
+  border-radius: 100px;
+  background-color: $color-light-s;
+  cursor: pointer;
+  @extend %transition;
+  a {
+     color: $color-dark-3xl;
+  }
+  &:hover {
+     background-color: $color-primary-light;
+     border-color: $color-primary-light;
+  }
+}
+.button-colored {
+  background-color: $color-primary;
+
+}
+
+.button-active {
+  @extend .button-colored;
+}

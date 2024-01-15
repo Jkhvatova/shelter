@@ -1,0 +1,108 @@
+/** {
+  border: 1px solid red;
+}*/
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-light-xl;
+  font-size: 1.5rem;
+  @extend %font-primary;
+  overflow-x: hidden;
+}
+h1 {
+  @extend %font-primary;
+  @include font($size: 3.2rem, $height: 3.52rem, $spacing: 0.06em);
+  color: $color-primary;
+  margin: 0;
+}
+
+h2 {
+  @extend %font-primary;
+  @include font($size: 4.4rem, $height: 5.72rem);
+  color: $color-dark-l;
+  margin: 0;
+  @include media-sm-md {
+    @include font($size: 2.5rem, $height: 3.25rem, $spacing: 0.15rem);
+ }
+}
+
+h3 {
+  @extend %font-primary;
+  @include font($size: 3.5rem, $height: 4.55rem,  $spacing: 0.06em);
+  color: $color-dark-l;
+  margin: 0;
+  @include media-sm-md {
+    @include font($size: 2.5rem, $height: 3.25rem, $spacing: 0.15rem);
+ }
+}
+
+h4 {
+  @extend %font-primary;
+  @include font($size: 2rem, $height: 2.3rem, $spacing: 0.06em);
+  color: $color-dark-l;
+  margin: 0;
+     @include media-sm-md {
+      @include font($size: 1.5rem, $height: 1.65rem, $spacing: 0.06em);
+   }
+}
+
+h5 {
+  @extend %font-primary;
+  @include font($size: 1.5rem, $height: 1.7rem, $spacing: 0.06em);
+  color: $color-dark-l;
+  margin: 0;
+}
+
+p {
+  @extend %font-add;
+  @include font($size: 1.5rem, $height: 2.4rem);
+  color: $color-dark-xl;
+}
+
+a {
+  text-decoration: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(41, 41, 41, 0.6);
+  transition: all 0.3s;
+}
+.overlay-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(41, 41, 41, 0.6);
+  transition: all 0.3s;
+}
+.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 20;
+  height: 100vh;
+
+}
+@include media-md-lg {
+  .overlay {
+     display: none;
+
+  }
+}

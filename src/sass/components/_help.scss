@@ -1,0 +1,116 @@
+$icons_path: '~/src/assets/icons/';
+
+.help {
+  &__container {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    @media screen and (max-width: 700px) {
+      padding-top: 42px;
+      padding-bottom: 42px;
+    }
+  }
+  &__header {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 40px;
+    @media screen and (max-width: 700px) {
+      padding-bottom: 22px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 19px;
+    column-gap: 120px;
+    row-gap: 55px;
+    @media screen and (max-width: 1200px) {
+      column-gap: 120px;
+    }
+    @media screen and (max-width: 1000px) {
+      column-gap: 60px;
+    }
+    @media screen and (max-width: 700px) {
+      column-gap: 40px;
+    }
+    @media screen and (max-width: 500px) {
+      column-gap: 31px;
+      row-gap: 30px;
+      justify-content: flex-start;
+      margin-left: 5px;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 1200px)  {
+      width: 24%;
+   }
+   @media screen and (max-width: 700px) {
+      width: 44%;
+   }
+  }
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  padding-bottom: 30px;
+  @include media-sm-md {
+   width: 50px;
+   height: 50px;
+   padding-bottom: 20px;
+}
+
+  &-food {
+     background-image: url($icons_path + "icon-pet-food.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+  &-transport {
+     background-image: url($icons_path + "icon-transportation.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+  &-toys {
+     background-image: url($icons_path + "icon-toys.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+  &-bowls {
+     background-image: url($icons_path + "icon-bowls-and-cups.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+  &-shampoos {
+     background-image: url($icons_path + "icon-shampoos.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+  &-vitamins {
+     background-image: url($icons_path + "icon-vitamins.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+  &-medicines {
+     background-image: url($icons_path + "icon-medicines.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+  &-collars {
+     background-image: url($icons_path + "icon-collars-leashes.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+  &-sleep {
+     background-image: url($icons_path + "icon-sleeping-area.svg");
+     background-repeat: no-repeat;
+     background-size: contain;
+  }
+}

@@ -1,0 +1,80 @@
+$image_path: '~/src/assets/images/';
+.not-only {
+  &__container {
+    justify-content: space-between;
+    @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+  }
+}
+  &__content {
+    display: flex;
+    padding-bottom: 3px;
+    flex-direction: column;
+    justify-content: center;
+    width: 39%;
+    @media screen and (max-width: 1000px) {
+      padding-top: 46px;
+      width: 65%;
+    }
+    @media screen and (max-width: 767px) {
+      width: 80%;
+    }
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+  }
+  &__title {
+    color: $color-light-xl;
+    @include media-sm-md {
+      text-align: center;
+    }
+  }
+  &__description {
+    color: $color-dark-s;
+    margin: 0;
+    padding: 42px 0;
+    @media screen and (max-width: 500px) {
+      text-align: center;
+    }
+  }
+  &__button {
+    width: auto;
+    display: flex;
+    @media screen and (max-width: 1000px) {
+      justify-content: center;
+    }
+  }
+  .button {
+    padding: 13px 43px;
+  }
+  &__image {
+    margin-top: 77px;
+    width: 698px;
+    background-image: url($image_path + "start-screen-puppy.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    height: 728px;
+    @media screen and (max-width: 1000px) {
+      margin-top: 97px;
+      margin-left: 138px;
+      width: 569px;
+      height: 593px;
+    }
+    @media screen and (max-width: 700px) {
+      width: calc(569px * 0.7);
+      height: calc(593px * 0.7);;
+      padding-top: 0;
+      margin-top: 108px;
+      margin-left: 40px;
+   }
+    @media screen and (max-width: 400px) {
+      width: 260px;
+      height: 272px;
+      margin-top: 102px;
+   }
+  }
+}
+

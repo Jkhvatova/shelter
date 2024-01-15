@@ -1,0 +1,19 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+
+  @include media-md-lg {
+    min-width: 708px;
+    padding: 0 30px;
+  }
+  @include media-sm-md {
+    min-width: 300px;
+    padding: 0 10px;
+  }
+}
+
+.top-container {
+  background: url("/src/assets/images/noise_transparent@2x.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, #5B483A 0%, #262425 100%), #211F20;
+}

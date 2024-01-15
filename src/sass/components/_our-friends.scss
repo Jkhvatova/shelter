@@ -1,0 +1,314 @@
+$icons_path: '~/src/assets/icons/';
+
+.our-friends {
+  background-color: $color-light-l;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    @media screen and (max-width: 700px) {
+      padding-bottom: 42px;
+    }
+    @include media-sm-md {
+      padding-top: 42px;
+   }
+  }
+  &__header {
+    margin: 0 auto;
+    padding-bottom: 60px;
+    text-align: center;
+    @media screen and (max-width: 700px) {
+      padding-bottom: 41px;
+    }
+  }
+  &__button {
+    padding-top: 58px;
+    @media screen and (max-width: 700px) {
+      padding-top: 40px;
+    }
+  }
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  @include media-sm-md {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 270px;
+ }
+}
+
+.slider-inner {
+  width: 990px;
+  overflow: hidden;
+ @include media-md-lg {
+    width: 580px;
+ }
+ @include media-sm-md {
+  width: 270px;
+  order: 1;
+}
+}
+
+.cards-row {
+  display: flex;
+  position: relative;
+  left: -990px;
+  @include media-md-lg {
+     left: -580px;
+  }
+  @include media-sm-md {
+     left: -270px;
+  }
+}
+.cards-left,
+.cards-center,
+.cards-right {
+   display: flex;
+   gap: 90px;
+   @include media-md-lg {
+      gap: 40px;
+      width: 580px;
+   }
+   @include media-sm-md {
+      width: 270px;
+   }
+}
+.arrow {
+  @extend %transition;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 2px solid $color-primary;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: 14px 6px;
+  background-position: center;
+  &:hover {
+     background-color: $color-primary-light;
+     border-color: $color-primary-light;
+  }
+  &-left {
+    background-image: url($icons_path + "arrow-left.svg");
+    margin-right: 53px;
+    @include media-md-lg {
+      margin-right: 12px;
+    }
+    @include media-sm-md {
+      order: 2;
+      margin: 19px 39px 0 0;
+    }
+  }
+  &-right {
+    background-image: url($icons_path + "arrow-right.svg");
+    margin-left: 53px;
+    @include media-md-lg {
+      margin-left: 12px;
+    }
+    @include media-sm-md {
+      order: 3;
+      margin: 19px 0 0 39px;
+
+    }
+  }
+}
+
+.card {
+  @extend %transition;
+  cursor: pointer;
+  background-color: $color-light-s;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 9px;
+  &:hover {
+    background-color: $color-light-xl;
+    filter: drop-shadow(0px 2px 35px rgba(13, 13, 13, 0.04));
+    button {
+       background-color: $color-primary-light;
+       border-color: $color-primary-light;
+    }
+ }
+ &__image {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  overflow: hidden;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+ }
+ &__title {
+    @extend %font-primary;
+    @include font($size: 2rem, $height: 2.272rem, $spacing: 0.1rem);
+    padding-top: 10px;
+ }
+ &__button {
+    padding-top: 8px;
+ }
+}
+// Slider animation
+
+@keyframes to-right {
+  from {left: -990px;}
+  to {left: -1980px;}
+}
+@include media-md-lg {
+  @keyframes to-right {
+     from {left: -580px;}
+     to {left: -1160px;}
+   }
+}
+@include media-sm-md {
+  @keyframes to-right {
+     from {left: -270px;}
+     to {left: -540px;}
+   }
+}
+.transition-right {
+  animation-name: to-right;
+  animation-duration: 1s;
+}
+
+@keyframes to-left {
+  from {left: -990px;}
+  to {left: 0;}
+}
+@include media-md-lg {
+  @keyframes to-left {
+     from {left: -580px;}
+     to {left: 0;}
+   }
+}
+@include media-sm-md {
+  @keyframes to-left {
+     from {left: -270px;}
+     to {left: 0;}
+   }
+}
+.transition-left {
+  animation-name: to-left;
+  animation-duration: 1s;
+}
+
+//Pets page
+.pets-page__our-friends {
+  .our-friends__container {
+    @include media-md-lg {
+      padding-bottom: 77px;
+   }
+   @include media-sm-md {
+      padding-bottom: 43px;
+   }
+  }
+
+  .our-friends__header {
+     @include media-md-lg {
+        padding-bottom: 29px;
+     }
+     @include media-sm-md {
+        padding-bottom: 41px;
+     }
+  }
+}
+.our-friends__cards-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 29px;
+  justify-content: center;
+  .card {
+     display: flex;
+    //  @media screen and (max-width: 1259px) {
+    //   &:nth-child(7),
+    //   &:nth-child(8) {
+    //     display: none;
+    //   }
+    // }
+    // @media screen and (max-width: 700px) {
+    //   &:nth-child(4),
+    //   &:nth-child(5),
+    //   &:nth-child(6) {
+    //     display: none;
+    //   }
+    // }
+     &__button {
+        padding-top: 9px;
+     }
+  }
+}
+
+
+.pagination {
+  padding-top: 61px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  width: 340px;
+  column-gap: 23px;
+  @media screen and (max-width: 1100px) {
+   padding-top: 40px;
+   column-gap: 23px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 300px;
+    padding-top: 42px;
+    column-gap: 13px;
+   }
+  &__arrow {
+  @extend %transition;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 2px solid $color-primary;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $color-light-s;
+  &:hover {
+     background-color: $color-primary-light;
+     border-color: $color-primary-light;
+  }
+  &-start {
+     background-image: url($icons_path + "very-right.svg");
+     background-size: 27px 23px;
+     transform: scaleX(-1);
+  }
+  &-left {
+     background-image: url($icons_path + "right.svg");
+     background-size: 13px 23px;
+     transform: scaleX(-1);
+  }
+  &-page {
+     @extend %font-primary;
+     @include font($size: 2rem, $height: 2.3rem);
+  }
+  &-right {
+     background-image: url($icons_path + "right.svg");
+     background-size: 13px 23px;
+     text-align: center;
+  }
+  &-end {
+     background-image: url($icons_path + "very-right.svg");
+     background-size: 27px 23px;
+  }
+  }
+  .arrow-inactive {
+     border-color: $color-dark-s;
+     pointer-events: none;
+     opacity: 0.4;
+  }
+  .arrow-active {
+     background-color: $color-primary;
+     border-color: $color-primary;
+     pointer-events: none;
+  }
+}

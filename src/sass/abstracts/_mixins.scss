@@ -1,0 +1,30 @@
+@mixin font($size, $height: $size, $weight: 400, $style: normal, $spacing: 0em) {
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  line-height: $height;
+  letter-spacing: $spacing;
+}
+@mixin media-lg {
+  @media (min-width: $width-lg) {
+    @content;
+  }
+}
+
+@mixin media-md-lg {
+  @media (min-width: $width-md) and (max-width: ($width-lg - 1)) {
+     @content;
+  }
+}
+
+@mixin media-sm-md {
+  @media (max-width: ($width-md - 1)) {
+     @content;
+  }
+}
+
+@mixin media-sm {
+  @media (max-width: ($width-sm - 1)) {
+     @content;
+  }
+}
